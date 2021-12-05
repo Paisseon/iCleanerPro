@@ -1,0 +1,9 @@
+Package: emt.paisseon.icleaner
+Name: iCleaner Pro Crack
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: iCleaner Pro for free, nanodesu
+Maintainer: Paisseon
+Author: Paisseon
+Section: Tweaks
+Depends: ${ORION}, firmware (>= 12.2)
