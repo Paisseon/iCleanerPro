@@ -19,7 +19,8 @@ func getUDID() -> String { // stolen from Sileo lol
 	let gestalt = dlopen("/usr/lib/libMobileGestalt.dylib", RTLD_GLOBAL | RTLD_LAZY)
 	typealias MGCopyAnswerFunc = @convention(c) (CFString) -> CFString
 	let MGCopyAnswer = unsafeBitCast(dlsym(gestalt, "MGCopyAnswer"), to: MGCopyAnswerFunc.self)
-	return MGCopyAnswer("UniqueDeviceID" as CFString) as String
+	let udid = MGCopyAnswer("UniqueDeviceID" as CFString) as String
+	return udid.padding(toLength: 40, withPad: "0", startingAt: 0)
 }
 
 class iCleanerHook:ClassHook<NSURL> {
